@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Monterrey | Soluciones en Acero</title>
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="container nav">
+
+      <a href="index.html" class="brand">
+        <!-- Cambia esta ruta por tu logo real -->
+        <img src="img/logo-monterrey.svg" alt="Monterrey Soluciones en Acero" class="brand-logo">
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html" class="active">Inicio</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="productos.html">Productos</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="sucursales.html">Sucursales</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="Blog.html">Blog</a>
+      </nav>
+
+      <a href="contacto.html" class="btn-header">Cotizar ahora</a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+  </header>
+
+
+  <!-- HOME / HERO CON VIDEO -->
+  <main>
+    <section class="hero-home kojiro-hero" id="inicio">
+
+      <!-- Video institucional -->
+      <video class="kojiro-video" autoplay muted loop playsinline>
+        <source src="video/video-institucional.mp4" type="video/mp4">
+      </video>
+
+      <!-- Capa oscura -->
+      <div class="kojiro-overlay"></div>
+
+      <!-- Logo centrado -->
+      <div class="kojiro-logo-center">
+        <img src="img/logo-monterrey-blanco.png" alt="Monterrey" class="kojiro-main-logo">
+      </div>
+
+      <!-- Líneas animadas -->
+      <div class="kojiro-lines-stage">
+        <div class="kojiro-lines-list">
+          <div class="kojiro-line">Agro.</div>
+          <div class="kojiro-line">Construcción.</div>
+          <div class="kojiro-line">Industria.</div>
+          <div class="kojiro-line">Metalmecánica.</div>
+        </div>
+      </div>
+
+      <!-- Indicador -->
+      <div class="kojiro-scroll">
+        <span></span>
+      </div>
+
+    </section>
+    <!-- SECCIÓN SOLUCIONES -->
+    <section class="solutions-preview">
+      <div class="container">
+
+        <div class="solutions-grid">
+
+          <!-- CARD 1 -->
+          <article class="solution-card reveal">
+            <div class="solution-img">
+              <img src="img/construccion.jpg" alt="Construcción Civil">
+            </div>
+
+            <div class="solution-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M3 21h18"></path>
+                <path d="M5 21V7l8-4v18"></path>
+                <path d="M19 21V11l-6-3"></path>
+                <path d="M9 9h1M9 13h1M9 17h1M16 13h1M16 17h1"></path>
+              </svg>
+            </div>
+
+            <div class="solution-content">
+              <h3>Linea Construcción</h3>
+              <p>
+                Soluciones de acero confiables para edificaciones,
+                obras y proyectos de infraestructura.
+              </p>
+
+              <a href="servicios.html" class="solution-link">
+                <span>Ver más</span>
+                <strong>→</strong>
+              </a>
+            </div>
+          </article>
+
+
+          <!-- CARD 2 -->
+          <article class="solution-card reveal delay-1">
+            <div class="solution-img">
+              <img src="img/industria.jpg" alt="Industria">
+            </div>
+
+            <div class="solution-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M3 21h18"></path>
+                <path d="M5 21V9l5 4V9l5 4V5h4v16"></path>
+                <path d="M8 17h1M12 17h1M16 17h1"></path>
+              </svg>
+            </div>
+
+            <div class="solution-content">
+              <h3>Linea Industrial</h3>
+              <p>
+                Productos y servicios para la industria metalmecánica,
+                manufacturera y de transformación.
+              </p>
+
+              <a href="servicios.html" class="solution-link">
+                <span>Ver más</span>
+                <strong>→</strong>
+              </a>
+            </div>
+          </article>
+
+
+          <!-- CARD 3 -->
+          <article class="solution-card reveal delay-2">
+            <div class="solution-img">
+              <img src="img/agropecuaria.jpg" alt="Línea Agropecuaria">
+            </div>
+
+            <div class="solution-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M4 16h16"></path>
+                <circle cx="7" cy="18" r="2"></circle>
+                <circle cx="17" cy="18" r="2"></circle>
+                <path d="M8 16V8h5l3 4h3v4"></path>
+                <path d="M4 16v-4h4"></path>
+              </svg>
+            </div>
+
+            <div class="solution-content">
+              <h3>Línea Agropecuaria</h3>
+              <p>
+                Materiales resistentes y duraderos para el sector
+                agropecuario y ganadero.
+              </p>
+
+              <a href="servicios.html" class="solution-link">
+                <span>Ver más</span>
+                <strong>→</strong>
+              </a>
+            </div>
+          </article>
+
+           <!-- CARD 4 -->
+          <!-- CARD 4 -->
+<article class="solution-card reveal delay-3">
+  <div class="solution-img">
+    <img src="img/metalmecanica.jpg" alt="Línea Metalmecánica">
+  </div>
+
+  <div class="solution-icon">
+    <svg viewBox="0 0 24 24">
+      <path d="M14.7 6.3a4 4 0 0 0-5 5L4 17v3h3l5.7-5.7a4 4 0 0 0 5-5z"></path>
+      <path d="M15 5l4 4"></path>
+      <path d="M13 7l4 4"></path>
+    </svg>
+  </div>
+
+  <div class="solution-content">
+    <h3>Línea Metalmecánica</h3>
+    <p>
+      Productos y soluciones para fabricación, estructuras metálicas,
+      talleres y trabajos industriales especializados.
+    </p>
+
+    <a href="servicios.html" class="solution-link">
+      <span>Ver más</span>
+      <strong>→</strong>
+    </a>
+  </div>
+</article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PRODUCTOS DESTACADOS -->
+    <section class="featured-products">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <div>
+            <span class="section-subtitle">Productos destacados</span>
+            <h2>Acero que impulsa grandes proyectos</h2>
+          </div>
+
+          <p>
+            Explora algunas de nuestras principales líneas de productos.
+            Materiales resistentes para construcción, industria y agropecuaria.
+          </p>
+        </div>
+
+
+        <div class="products-grid">
+
+          <!-- PRODUCTO 1 -->
+          <article class="product-card reveal">
+            <div class="product-img">
+              <img src="img/angulares.jpg" alt="Varilla Corrugada">
+            </div>
+
+            <div class="product-info">
+              <span>Construcción</span>
+              <h3>Fierro Angular</h3>
+              <p>Alta resistencia para estructuras, columnas, vigas y obras civiles.</p>
+
+              <a href="productos.html" class="product-link">
+                Ver producto
+                <strong>→</strong>
+              </a>
+            </div>
+          </article>
+
+
+          <!-- PRODUCTO 2 -->
+          <article class="product-card reveal delay-1">
+            <div class="product-img">
+              <img src="img/perfil-canal-u.jpg" alt="Perfiles Estructurales">
+            </div>
+
+            <div class="product-info">
+              <span>Industria</span>
+              <h3>Perfil Canal U</h3>
+              <p>Ángulos, canales, vigas y perfiles para proyectos exigentes.</p>
+
+              <a href="productos.html" class="product-link">
+                Ver producto
+                <strong>→</strong>
+              </a>
+            </div>
+          </article>
+
+
+          <!-- PRODUCTO 3 -->
+          <article class="product-card reveal delay-2">
+            <div class="product-img">
+              <img src="img/plancha-inox.jpg" alt="Tubería">
+            </div>
+
+            <div class="product-info">
+              <span>construccion</span>
+              <h3>Planchas Inoxidable</h3>
+              <p>Tubos redondos, cuadrados y rectangulares para diferentes usos.</p>
+
+              <a href="productos.html" class="product-link">
+                Ver producto
+                <strong>→</strong>
+              </a>
+            </div>
+          </article>
+
+
+          <!-- PRODUCTO 4 -->
+          <article class="product-card reveal delay-3">
+            <div class="product-img">
+              <img src="img/perfil-canal-i.jpg" alt="Lámina y Placa">
+            </div>
+
+            <div class="product-info">
+              <span>construccion</span>
+              <h3>Perfil I</h3>
+              <p>Materiales planos para fabricación, estructuras y aplicaciones industriales.</p>
+
+              <a href="productos.html" class="product-link">
+                Ver producto
+                <strong>→</strong>
+              </a>
+            </div>
+          </article>
+
+        </div>
+
+
+        <div class="products-action reveal">
+          <a href="productos.html" class="btn-products">
+            Ver catálogo completo
+            <span>→</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!----------------------------------------------------------------->
+    <!-- GALERÍA / EVENTOS -->
+    <!------------------------------------------------------->
+    <section class="gallery-section">
+      <div class="container">
+
+        <div class="gallery-header reveal">
+          <span class="section-subtitle">Galería Monterrey</span>
+          <h2>Eventos, activaciones y momentos destacados</h2>
+          <p>
+            Un espacio visual para mostrar actividades de la empresa,
+            eventos corporativos, capacitaciones, ferias y acciones comerciales.
+          </p>
+        </div>
+
+        <!-- FILTROS -->
+        <div class="gallery-filters reveal delay-1">
+          <button class="gallery-filter active" data-filter="eventos">Eventos</button>
+          <button class="gallery-filter" data-filter="capacitaciones">Capacitaciones</button>
+          <button class="gallery-filter" data-filter="activaciones">Activaciones</button>
+          <button class="gallery-filter" data-filter="sucursales">Sucursales</button>
+        </div>
+
+        <!-- GRID DE FOTOS -->
+        <div class="gallery-grid">
+
+          <!-- EVENTOS -->
+          <article class="gallery-card reveal" data-category="eventos">
+            <img src="img/evento1.jpg" alt="Evento Monterrey">
+            <div class="gallery-overlay">
+              <span>Eventos</span>
+              <h3>Encuentro corporativo</h3>
+            </div>
+          </article>
+
+          <article class="gallery-card reveal delay-1" data-category="eventos">
+            <img src="img/evento2.jpg" alt="Evento Monterrey">
+            <div class="gallery-overlay">
+              <span>Eventos</span>
+              <h3>Actividad institucional</h3>
+            </div>
+          </article>
+
+          <article class="gallery-card reveal delay-2" data-category="eventos">
+            <img src="img/evento3.jpg" alt="Evento Monterrey">
+            <div class="gallery-overlay">
+              <span>Eventos</span>
+              <h3>Participación empresarial</h3>
+            </div>
+          </article>
+
+
+          <!-- CAPACITACIONES -->
+          <article class="gallery-card reveal" data-category="capacitaciones">
+            <img src="img/capacitacion-1.jpg" alt="Capacitación Monterrey">
+            <div class="gallery-overlay">
+              <span>Capacitaciones</span>
+              <h3>Formación técnica</h3>
+            </div>
+          </article>
+
+          <article class="gallery-card reveal delay-1" data-category="capacitaciones">
+            <img src="img/capacitacion-2.jpg" alt="Capacitación Monterrey">
+            <div class="gallery-overlay">
+              <span>Capacitaciones</span>
+              <h3>Entrenamiento de equipo</h3>
+            </div>
+          </article>
+
+          <article class="gallery-card reveal delay-2" data-category="capacitaciones">
+            <img src="img/capacitacion-3.jpg" alt="Capacitación Monterrey">
+            <div class="gallery-overlay">
+              <span>Capacitaciones</span>
+              <h3>Jornada de aprendizaje</h3>
+            </div>
+          </article>
+
+
+          <!-- ACTIVACIONES -->
+          <article class="gallery-card reveal" data-category="activaciones">
+            <img src="img/activacion-1.jpg" alt="Activación Monterrey">
+            <div class="gallery-overlay">
+              <span>Activaciones</span>
+              <h3>Presentación de productos</h3>
+            </div>
+          </article>
+
+          <article class="gallery-card reveal delay-1" data-category="activaciones">
+            <img src="img/activacion-2.jpg" alt="Activación Monterrey">
+            <div class="gallery-overlay">
+              <span>Activaciones</span>
+              <h3>Experiencia comercial</h3>
+            </div>
+          </article>
+
+          <article class="gallery-card reveal delay-2" data-category="activaciones">
+            <img src="img/activacion-3.jpg" alt="Activación Monterrey">
+            <div class="gallery-overlay">
+              <span>Activaciones</span>
+              <h3>Promoción en punto de venta</h3>
+            </div>
+          </article>
+
+
+          <!-- SUCURSALES -->
+          <article class="gallery-card reveal" data-category="sucursales">
+            <img src="img/sucursal-1.jpg" alt="Sucursal Monterrey">
+            <div class="gallery-overlay">
+              <span>Sucursales</span>
+              <h3>Atención al cliente</h3>
+            </div>
+          </article>
+
+          <article class="gallery-card reveal delay-1" data-category="sucursales">
+            <img src="img/sucursal-2.jpg" alt="Sucursal Monterrey">
+            <div class="gallery-overlay">
+              <span>Sucursales</span>
+              <h3>Presencia nacional</h3>
+            </div>
+          </article>
+
+          <article class="gallery-card reveal delay-2" data-category="sucursales">
+            <img src="img/sucursal-3.jpg" alt="Sucursal Monterrey">
+            <div class="gallery-overlay">
+              <span>Sucursales</span>
+              <h3>Espacios de atención</h3>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="gallery-action reveal">
+          <a href="galeria.html" class="btn-gallery">
+            Ver galería completa
+            <span>→</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!----------------------------------------------------------------->
+    <!-- COMUNICADOS Y NOVEDADES -->
+    <!----------------------------------------------------------------->
+    <section class="updates-section">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <div>
+            <span class="section-subtitle">Comunicados</span>
+            <h2>Noticias, avisos y comunicados importantes</h2>
+          </div>
+
+          <p>
+            Mantente informado sobre novedades institucionales,
+            actividades, avisos comerciales y comunicados de Monterrey.
+          </p>
+        </div>
+
+        <div class="updates-layout">
+
+          <!-- COMUNICADO DESTACADO -->
+          <article class="update-featured reveal">
+            <div class="update-featured-img">
+              <img src="img/comunicado.jpg" alt="Comunicado destacado Monterrey">
+            </div>
+
+            <div class="update-featured-content">
+              <span class="update-tag">Comunicado institucional</span>
+
+              <h3>
+                Monterrey fortalece su presencia con nuevas soluciones para construcción e industria
+              </h3>
+
+              <p>
+                Presentamos información relevante sobre nuestras líneas de productos,
+                servicios y acciones institucionales para nuestros clientes.
+              </p>
+
+              <div class="update-meta">
+                <span>22 mayo 2026</span>
+                <a href="comunicados.html">Leer más →</a>
+              </div>
+            </div>
+          </article>
+
+
+          <!-- LISTA DE AVISOS -->
+          <div class="updates-list">
+
+            <article class="update-item reveal delay-1">
+              <div class="update-date">
+                <strong>18</strong>
+                <span>MAY</span>
+              </div>
+
+              <div class="update-info">
+                <span class="update-category">Aviso</span>
+                <h3>Horario especial de atención en sucursales</h3>
+                <p>Conoce los horarios actualizados de atención para nuestras sucursales.</p>
+                <a href="comunicados.html">Ver comunicado →</a>
+              </div>
+            </article>
+
+            <article class="update-item reveal delay-2">
+              <div class="update-date">
+                <strong>15</strong>
+                <span>MAY</span>
+              </div>
+
+              <div class="update-info">
+                <span class="update-category">Nota</span>
+                <h3>Nuevas líneas de productos disponibles</h3>
+                <p>Actualización de productos destacados para construcción e industria.</p>
+                <a href="comunicados.html">Ver nota →</a>
+              </div>
+            </article>
+
+            <article class="update-item reveal delay-3">
+              <div class="update-date">
+                <strong>10</strong>
+                <span>MAY</span>
+              </div>
+
+              <div class="update-info">
+                <span class="update-category">Evento</span>
+                <h3>Participación en actividades comerciales</h3>
+                <p>Resumen de activaciones, visitas y eventos realizados por Monterrey.</p>
+                <a href="comunicados.html">Ver más →</a>
+              </div>
+            </article>
+
+          </div>
+
+        </div>
+
+        <div class="updates-action reveal">
+          <a href="comunicados.html" class="btn-updates">
+            Ver todos los comunicados
+            <span>→</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!----------------------------------------------------------->
+    <!-- TESTIMONIOS CLIENTES -->
+    <!---------------------------------------------------------->
+
+
+    <section class="testimonials-section">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <div>
+            <span class="section-subtitle">Opiniones de clientes</span>
+            <h2>Confianza construida con calidad y servicio</h2>
+          </div>
+
+          <p>
+            Comentarios de clientes que confían en Monterrey para sus proyectos
+            de construcción, industria y soluciones agropecuarias.
+          </p>
+        </div>
+
+        <div class="testimonials-wrapper reveal">
+
+          <button class="testimonial-arrow testimonial-prev" id="testimonialPrev">
+            ‹
+          </button>
+
+          <div class="testimonials-slider" id="testimonialsSlider">
+
+            <!-- TESTIMONIO 1 -->
+            <article class="testimonial-card active">
+              <div class="testimonial-stars">
+                ★★★★★
+              </div>
+
+              <p>
+                “La atención fue rápida y clara. Nos ayudaron a elegir el material
+                adecuado para nuestra obra y cumplieron con la entrega.”
+              </p>
+
+              <div class="testimonial-client">
+                <div class="client-avatar">C</div>
+                <div>
+                  <h3>Ferreteria Ferrobarrero</h3>
+                  <span>Ferretero</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- TESTIMONIO 2 -->
+            <article class="testimonial-card">
+              <div class="testimonial-stars">
+                ★★★★★
+              </div>
+
+              <p>
+                “Encontramos variedad de productos y buena orientación técnica.
+                Monterrey nos transmite confianza para compras recurrentes.”
+              </p>
+
+              <div class="testimonial-client">
+                <div class="client-avatar">I</div>
+                <div>
+                  <h3>Ferreteria D y L</h3>
+                  <span>Ferretero</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- TESTIMONIO 3 -->
+            <article class="testimonial-card">
+              <div class="testimonial-stars">
+                ★★★★★
+              </div>
+
+              <p>
+                “Los materiales son resistentes y se adaptan bien al trabajo de campo.
+                Muy buena opción para soluciones agropecuarias.”
+              </p>
+
+              <div class="testimonial-client">
+                <div class="client-avatar">A</div>
+                <div>
+                  <h3>Ferreteria Ferrosur</h3>
+                  <span>Ferretero</span>
+                </div>
+              </div>
+            </article>
+
+          </div>
+
+          <button class="testimonial-arrow testimonial-next" id="testimonialNext">
+            ›
+          </button>
+
+        </div>
+
+        <div class="testimonial-dots" id="testimonialDots">
+          <button class="active"></button>
+          <button></button>
+          <button></button>
+        </div>
+
+      </div>
+    </section>
+
+    <!--------------------------------------------------------------------->
+    <!-- CONTACTANOS -->
+    <!--------------------------------------------------------------------->
+
+    <section class="contact-section">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <div>
+            <span class="section-subtitle">Contáctanos</span>
+            <h2>Estamos listos para asesorarte</h2>
+          </div>
+
+          <p>
+            Escríbenos para recibir información sobre productos, disponibilidad,
+            cotizaciones o atención en sucursales.
+          </p>
+        </div>
+
+        <div class="contact-layout">
+
+          <!-- INFORMACIÓN -->
+          <div class="contact-info reveal">
+
+            <div class="contact-card contact-main">
+              <span>Atención comercial</span>
+              <h3>Solicita una cotización rápida</h3>
+              <p>
+                Nuestro equipo puede ayudarte a elegir el material adecuado para
+                construcción, industria o línea agropecuaria.
+              </p>
+
+              <a href="https://wa.me/59170000000" target="_blank" class="contact-whatsapp">
+                Escribir por WhatsApp
+                <strong>→</strong>
+              </a>
+            </div>
+
+            <div class="contact-small-grid">
+
+              <div class="contact-small-card">
+                <div class="contact-icon">
+                  📍
+                </div>
+                <div>
+                  <h4>Ubicación</h4>
+                  <p>Santa Cruz, Bolivia</p>
+                </div>
+              </div>
+
+              <div class="contact-small-card">
+                <div class="contact-icon">
+                  ☎
+                </div>
+                <div>
+                  <h4>Teléfono</h4>
+                  <p>+591 70000000</p>
+                </div>
+              </div>
+
+              <div class="contact-small-card">
+                <div class="contact-icon">
+                  ✉
+                </div>
+                <div>
+                  <h4>Correo</h4>
+                  <p>ventas@monterrey.com.bo</p>
+                </div>
+              </div>
+
+              <div class="contact-small-card">
+                <div class="contact-icon">
+                  🕘
+                </div>
+                <div>
+                  <h4>Horario</h4>
+                  <p>Lun. a Sáb. / Horario comercial</p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- FORMULARIO -->
+          <div class="contact-form-box reveal delay-1">
+            <form class="contact-form" id="contactForm">
+
+              <div class="form-group">
+                <label for="name">Nombre completo</label>
+                <input type="text" id="name" placeholder="Escribe tu nombre" required>
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Teléfono / WhatsApp</label>
+                <input type="tel" id="phone" placeholder="Ej: 70000000" required>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" placeholder="tu correo electrónico">
+              </div>
+
+              <div class="form-group">
+                <label for="interest">Área de interés</label>
+                <select id="interest" required>
+                  <option value="">Selecciona una opción</option>
+                  <option value="Construcción">Construcción</option>
+                  <option value="Industria">Industria</option>
+                  <option value="Agropecuaria">Agropecuaria</option>
+                  <option value="Productos">Productos</option>
+                  <option value="Sucursales">Sucursales</option>
+                  <option value="Otros">Otros</option>
+                </select>
+              </div>
+
+              <div class="form-group full">
+                <label for="message">Mensaje</label>
+                <textarea id="message" rows="5" placeholder="Cuéntanos qué necesitas cotizar o consultar"
+                  required></textarea>
+              </div>
+
+              <button type="submit" class="btn-contact">
+                Enviar consulta
+                <span>→</span>
+              </button>
+
+              <p class="form-message" id="formMessage"></p>
+
+            </form>
+          </div>
+
+        </div>
+
+
+        <!-- MAPA / UBICACIÓN -->
+        <div class="contact-map reveal">
+          <div class="map-placeholder">
+            <div>
+              <span>Mapa de ubicación</span>
+              <h3>Encuentra la sucursal más cercana</h3>
+              <p>
+                Aquí puedes insertar un mapa de Google Maps o un enlace directo a sucursales.
+              </p>
+              <a href="sucursales.html">
+                Ver sucursales →
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!----------------------------------------------------------->
+    <!-- FOOTER -->
+    <!----------------------------------------------------------->
+    <footer class="footer">
+      <div class="container">
+
+        <div class="footer-content">
+
+          <!-- COLUMNA 1 -->
+          <div class="footer-col footer-brand">
+            <a href="index.html" class="footer-logo">
+              <img src="img/logo-monterrey-blanco.svg" alt="Monterrey Soluciones en Acero">
+            </a>
+
+            <p>
+              Soluciones en acero para construcción, industria y línea agropecuaria.
+              Calidad, confianza y asesoría para tus proyectos.
+            </p>
+
+            <div class="footer-social">
+              <a href="#" aria-label="Facebook">f</a>
+              <a href="#" aria-label="Instagram">ig</a>
+              <a href="#" aria-label="LinkedIn">in</a>
+              <a href="#" aria-label="TikTok">tk</a>
+            </div>
+          </div>
+
+
+          <!-- COLUMNA 2 -->
+          <div class="footer-col">
+            <h3>Menú</h3>
+
+            <ul>
+              <li><a href="index.html">Inicio</a></li>
+              <li><a href="nosotros.html">Nosotros</a></li>
+              <li><a href="productos.html">Productos</a></li>
+              <li><a href="servicios.html">Servicios</a></li>
+              <li><a href="sucursales.html">Sucursales</a></li>
+              <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+          </div>
+
+
+          <!-- COLUMNA 3 -->
+          <div class="footer-col">
+            <h3>Productos</h3>
+
+            <ul>
+              <li><a href="productos.html">Varilla Corrugada</a></li>
+              <li><a href="productos.html">Perfiles Estructurales</a></li>
+              <li><a href="productos.html">Tubería</a></li>
+              <li><a href="productos.html">Lámina y Placa</a></li>
+              <li><a href="productos.html">Mallas y Alambres</a></li>
+              <li><a href="productos.html">Electrodos</a></li>
+            </ul>
+          </div>
+
+
+          <!-- COLUMNA 4 -->
+          <div class="footer-col">
+            <h3>Contacto</h3>
+
+            <ul class="footer-contact">
+              <li>
+                <span>📍</span>
+                Santa Cruz, Bolivia
+              </li>
+
+              <li>
+                <span>☎</span>
+                +591 70000000
+              </li>
+
+              <li>
+                <span>✉</span>
+                ventas@monterrey.com.bo
+              </li>
+
+              <li>
+                <span>🕘</span>
+                Lun. a Sáb. / Horario comercial
+              </li>
+            </ul>
+
+            <a href="https://wa.me/59171300033" target="_blank" class="footer-whatsapp">
+              Escribir por WhatsApp
+              <strong>→</strong>
+            </a>
+          </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+          <p>© 2026 Monterrey Soluciones en Acero. Todos los derechos reservados.</p>
+
+          <div class="footer-bottom-links">
+            <a href="#">Política de privacidad</a>
+            <a href="#">Términos y condiciones</a>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
