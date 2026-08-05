@@ -496,6 +496,22 @@ const botKnowledge = [
     response:
       "Somos una empresa enfocada en brindar soluciones para construcción, agropecuaria, ferretería e industria, trabajando con responsabilidad, calidad y compromiso.",
   },
+  {
+    keywords: [
+        "certificado",
+        "certificados",
+        "certificacion",
+        "certificaciones",
+        "calidad",
+        "norma",
+        "normas",
+        "ficha tecnica",
+        "trazabilidad"
+    ],
+
+    response:
+        "La documentación de calidad puede variar según el producto, fabricante y lote. Revisa nuestra sección de Certificaciones o envíanos los datos del producto para ayudarte."
+},
 ];
 
 function normalizeText(text) {
@@ -599,7 +615,7 @@ const historyData = [
     title: "Los primeros pasos de Monterrey",
     text:
       "Monterrey nace con la visión de ofrecer productos de acero confiables, brindando atención cercana y soluciones para clientes del sector construcción e industria.",
-    image: "img/historia-1.jpg",
+    image: "img/etapa1-inicios.jpg",
     list: [
       "Inicio de operaciones comerciales.",
       "Primeras líneas de productos en acero.",
@@ -611,7 +627,7 @@ const historyData = [
     title: "Crecimiento y fortalecimiento comercial",
     text:
       "Con el tiempo, Monterrey amplía su catálogo de productos, mejora sus procesos internos y fortalece su relación con clientes de diferentes sectores productivos.",
-    image: "img/historia-2.jpg",
+    image: "img/etapa2-crecimiento.jpg",
     list: [
       "Ampliación del portafolio de productos.",
       "Mayor presencia en el mercado.",
@@ -623,7 +639,7 @@ const historyData = [
     title: "Expansión hacia nuevos sectores",
     text:
       "La empresa consolida soluciones para construcción, industria y línea agropecuaria, adaptándose a las necesidades reales de cada cliente.",
-    image: "img/historia-3.jpg",
+    image: "img/etapa3-expansion.jpg",
     list: [
       "Soluciones para construcción civil.",
       "Atención a industria y metalmecánica.",
@@ -635,7 +651,7 @@ const historyData = [
     title: "Modernización y mejora continua",
     text:
       "Actualmente, Monterrey continúa fortaleciendo su imagen, canales digitales y experiencia comercial para brindar una atención más moderna, rápida y eficiente.",
-    image: "img/historia-4.jpg",
+    image: "img/etapa4-actualidad.jpg",
     list: [
       "Modernización de canales digitales.",
       "Mayor enfoque en experiencia del cliente.",
