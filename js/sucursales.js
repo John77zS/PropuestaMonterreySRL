@@ -381,6 +381,16 @@ function addPageEvent(id, eventName, callback) {
   element.addEventListener(eventName, callback);
 }
 
+/*
+  Se usa para aplicar un comportamiento diferente
+  únicamente en celulares y tablets pequeñas.
+*/
+function isMobileBranchesView() {
+  return window.matchMedia(
+    "(max-width: 800px)"
+  ).matches;
+}
+
 
 /* =========================================================
    ESTADO DEL MAPA
@@ -582,6 +592,14 @@ function bindEvents() {
     "branchesList",
     "click",
     (event) => {
+      const showAllButton =
+        event.target.closest("[data-show-all]");
+
+      if (showAllButton) {
+        clearRoute();
+        return;
+      }
+
       const link =
         event.target.closest("a");
 
@@ -609,9 +627,29 @@ function bindEvents() {
 
       if (card) {
         selectBranch(
-          card.dataset.branch
+          card.dataset.branch,
+          "card"
         );
       }
+    }
+  );
+
+  /*
+    Al cambiar el tamaño de la ventana se vuelve a
+    construir el listado para pasar correctamente
+    entre la vista móvil y la vista de escritorio.
+  */
+  let resizeTimer;
+
+  window.addEventListener(
+    "resize",
+    () => {
+      clearTimeout(resizeTimer);
+
+      resizeTimer = setTimeout(
+        renderList,
+        120
+      );
     }
   );
 }
@@ -726,7 +764,7 @@ function addBranchMarker(branch) {
   */
   marker.addListener(
     "click",
-    () => selectBranch(branch.id)
+    () => selectBranch(branch.id, "marker")
   );
 
   state.markers.set(
@@ -808,16 +846,50 @@ function renderList() {
     return;
   }
 
+  const mobileSelection =
+    isMobileBranchesView() &&
+    Boolean(state.selected);
+
+  const selectedBranch =
+    mobileSelection
+      ? BRANCHES.find(
+          (branch) =>
+            branch.id === state.selected
+        )
+      : null;
+
+  /*
+    En celular, cuando se selecciona un pin,
+    solamente se muestra la tarjeta elegida.
+    En escritorio se mantiene el listado completo.
+  */
+  const branchesToRender =
+    selectedBranch
+      ? [selectedBranch]
+      : state.visible;
+
   const quantity =
-    state.visible.length;
+    branchesToRender.length;
+
+  const layout =
+    list.closest(
+      ".branches-map-layout"
+    );
+
+  layout?.classList.toggle(
+    "has-mobile-selection",
+    Boolean(selectedBranch)
+  );
 
   if (count) {
     count.textContent =
-      `${quantity} ${
-        quantity === 1
-          ? "sucursal"
-          : "sucursales"
-      }`;
+      selectedBranch
+        ? "Sucursal seleccionada"
+        : `${quantity} ${
+            quantity === 1
+              ? "sucursal"
+              : "sucursales"
+          }`;
   }
 
   if (!quantity) {
@@ -834,8 +906,8 @@ function renderList() {
     return;
   }
 
-  list.innerHTML =
-    state.visible.map((branch) => {
+  const cardsHtml =
+    branchesToRender.map((branch) => {
       let buttonText =
         "Ubicando…";
 
@@ -920,6 +992,23 @@ function renderList() {
         </article>
       `;
     }).join("");
+
+  const showAllButton =
+    selectedBranch
+      ? `
+        <button
+          type="button"
+          class="branches-show-all"
+          data-show-all
+        >
+          <span>←</span>
+          Ver todas las sucursales
+        </button>
+      `
+      : "";
+
+  list.innerHTML =
+    cardsHtml + showAllButton;
 }
 
 
@@ -927,7 +1016,10 @@ function renderList() {
    SELECCIONAR SUCURSAL
    ========================================================= */
 
-function selectBranch(id) {
+function selectBranch(
+  id,
+  source = "unknown"
+) {
   const branch =
     BRANCHES.find(
       (item) => item.id === id
@@ -951,6 +1043,29 @@ function selectBranch(id) {
   );
 
   state.map.setZoom(15);
+
+  /*
+    En celular no se desplaza la página hacia la tarjeta.
+    Así, al tocar un pin, el mapa permanece visible.
+
+    Cuando la selección se hace desde una tarjeta,
+    sí se vuelve suavemente al mapa.
+  */
+  if (isMobileBranchesView()) {
+    if (source === "card") {
+      const mapWrapper =
+        document.querySelector(
+          ".branches-map-wrapper"
+        );
+
+      mapWrapper?.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
+
+    return;
+  }
 
   const activeCard =
     document.querySelector(

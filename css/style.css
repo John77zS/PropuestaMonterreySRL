@@ -7497,6 +7497,36 @@ textarea {
 }
 
 
+/* Botón que aparece después de elegir un pin en celular */
+.branches-show-all {
+    width: 100%;
+    min-height: 42px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    border: 1px solid rgba(227, 6, 19, 0.24);
+    border-radius: 11px;
+    color: var(--red);
+    background: white;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 900;
+    cursor: pointer;
+    transition:
+        color 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.branches-show-all:hover {
+    color: white;
+    background: var(--red);
+    border-color: var(--red);
+}
+
+
 /* =========================================================
    CONTENEDOR DEL MAPA
    ========================================================= */
@@ -7963,6 +7993,34 @@ textarea {
 
     .branches-map-wrapper {
         min-height: 520px;
+        scroll-margin-top: 125px;
+    }
+
+    /*
+      Al tocar un pin solo queda visible su tarjeta.
+      El mapa se hace un poco más compacto para que
+      el usuario vea el mapa y la sucursal al mismo tiempo.
+    */
+    .branches-map-layout.has-mobile-selection
+    .branches-sidebar-heading {
+        display: none;
+    }
+
+    .branches-map-layout.has-mobile-selection
+    .branches-list {
+        max-height: none;
+        padding: 12px;
+        overflow: visible;
+    }
+
+    .branches-map-layout.has-mobile-selection
+    .branches-map-wrapper {
+        min-height: clamp(360px, 48vh, 430px);
+    }
+
+    .branches-map-layout.has-mobile-selection
+    .branch-card {
+        margin-bottom: 10px;
     }
 
     .branches-route-panel {
@@ -8034,6 +8092,11 @@ textarea {
 
     .branches-map-wrapper {
         min-height: 460px;
+    }
+
+    .branches-map-layout.has-mobile-selection
+    .branches-map-wrapper {
+        min-height: clamp(330px, 45vh, 390px);
     }
 
     .branches-sidebar-heading {
