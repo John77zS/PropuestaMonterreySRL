@@ -14,6 +14,10 @@ const BRANCHES = [
       "3er. anillo interno, N.º 3130, entre Av. Mutualista y Paraguá.",
     phone: "347 1960 / 347 1028",
     wa: "59171000045",
+    position: {
+        lat: -17.767374, 
+        lng:-63.158687
+    },
     search:
       "3er anillo interno 3130 entre Avenida Mutualista y Avenida Paraguá, Santa Cruz de la Sierra, Bolivia"
   },
@@ -26,6 +30,10 @@ const BRANCHES = [
       "4to. anillo, esquina Mutualista y Parque Industrial.",
     phone: "346 9200 / 346 9292",
     wa: "59172129378",
+    position: {
+        lat: -17.757409239154036, 
+        lng: -63.153883794600304
+    },
     search:
       "4to anillo esquina Avenida Mutualista y Parque Industrial, Santa Cruz de la Sierra, Bolivia"
   },
@@ -38,6 +46,10 @@ const BRANCHES = [
       "4to. anillo entre Paraguá y Mutualista.",
     phone: "364 2070 / 364 2071",
     wa: "59172129384",
+    position: {
+        lat: -17.760548964809182, 
+        lng:-63.15098740079532
+    },
     search:
       "4to anillo entre Avenida Paraguá y Avenida Mutualista, Santa Cruz de la Sierra, Bolivia"
   },
@@ -50,6 +62,10 @@ const BRANCHES = [
       "Av. Juan Pablo II, N.º 10, casi puente Río Seco.",
     phone: "286 0363",
     wa: "59171554263",
+    position: {
+        lat: -16.49110923615096, 
+        lng:-68.20166605107427
+    },
     search:
       "Avenida Juan Pablo II 10 casi puente Río Seco, El Alto, Bolivia"
   },
@@ -62,6 +78,10 @@ const BRANCHES = [
       "Av. Grigotá, entre 4to. y 5to. anillo.",
     phone: "353 0726",
     wa: "59172129385",
+    position: {
+        lat: -17.813484950847702, 
+        lng: -63.21040296946277
+    },
     search:
       "Avenida Grigotá entre 4to y 5to anillo, Santa Cruz de la Sierra, Bolivia"
   },
@@ -74,6 +94,10 @@ const BRANCHES = [
       "4to. anillo, diagonal Radial 17 ½, acera Urbanización Las Palmas.",
     phone: "355 5696",
     wa: "59167708222",
+    position: {
+        lat: -17.806816173113003, 
+        lng: -63.21169569711998
+    },
     search:
       "4to anillo diagonal Radial 17 1/2 Urbanización Las Palmas, Santa Cruz de la Sierra, Bolivia"
   },
@@ -86,6 +110,10 @@ const BRANCHES = [
       "Av. Virgen de Cotoca Km. 4 ½, zona Pampa de la Isla.",
     phone: "370 0290 / 323 0433",
     wa: "59172129390",
+    position: {
+        lat: -17.767361410218225, 
+        lng:-63.11229143588007
+    },
     search:
       "Avenida Virgen de Cotoca km 4.5 Pampa de la Isla, Santa Cruz de la Sierra, Bolivia"
   },
@@ -98,6 +126,10 @@ const BRANCHES = [
       "Av. Virgen de Cotoca, entre 4to. y 5to. anillo.",
     phone: "364 8136 / 364 8137",
     wa: "59167710988",
+    position: {
+        lat: -17.77655099923561, 
+        lng: -63.139971464030616
+    },
     search:
       "Avenida Virgen de Cotoca entre 4to y 5to anillo, Santa Cruz de la Sierra, Bolivia"
   },
@@ -110,6 +142,10 @@ const BRANCHES = [
       "4to. anillo esquina Radial 17 ½.",
     phone: "354 8915 / 354 8916",
     wa: "59172196986",
+    position: {
+        lat: -17.806324086987406, 
+        lng: -63.212723018043995
+    },
     search:
       "4to anillo esquina Radial 17 1/2, Santa Cruz de la Sierra, Bolivia"
   },
@@ -122,6 +158,10 @@ const BRANCHES = [
       "Av. Circunvalación y Alameda Warnes.",
     phone: "922 6288",
     wa: "59171093778",
+    position: {
+        lat: -17.351530796660015, 
+        lng:-63.25000097715757
+    },
     search:
       "Avenida Circunvalación y Alameda Warnes, Montero, Santa Cruz, Bolivia"
   },
@@ -134,6 +174,10 @@ const BRANCHES = [
       "5to. anillo, a una cuadra de Av. Radial 17 ½.",
     phone: "352 7101 / 355 3340",
     wa: "59172129386",
+    position: {
+        lat: -17.811089894474794, 
+        lng: -63.22079686562115
+    },
     search:
       "5to anillo a una cuadra de Avenida Radial 17 1/2, Santa Cruz de la Sierra, Bolivia"
   },
@@ -146,6 +190,10 @@ const BRANCHES = [
       "Av. Panamericana, frente al Convento Eparu.",
     phone: "463 1566",
     wa: "59172100949",
+    position: {
+        lat: -14.825327096651165, 
+        lng: -64.87076314816017
+    },
     search:
       "Avenida Panamericana frente al Convento Eparu, Trinidad, Beni, Bolivia"
   },
@@ -158,8 +206,28 @@ const BRANCHES = [
       "Carretera al Norte, pasando una cuadra del ingreso a Satélite Norte.",
     phone: "921 9075",
     wa: "59172100313",
+    position: {
+        lat: -17.605171569327837, 
+        lng:-63.15852005485933
+    },
     search:
       "Carretera al Norte una cuadra después del ingreso a Satélite Norte, Warnes, Santa Cruz, Bolivia"
+  },
+  {
+    id: "s15",
+    n: "15",
+    name: "Sucursal 15",
+    city: "La Paz",
+    address:
+      "Av. Ballivián, esquina calle 24 de calacoto",
+    phone: " 71554262",
+    wa: "59172100313",
+    position: {
+        lat: -16.53888858948752, 
+        lng:-68.07454572418746
+    },
+    search:
+      "Av. Ballivián, esquina calle 24 de calacoto"
   },
   {
     id: "s16",
@@ -170,6 +238,10 @@ const BRANCHES = [
       "Av. Santos Dumont, entre 5to. y 6to. anillo.",
     phone: "358 0055",
     wa: "59172100828",
+    position: {
+        lat: -17.835950141925938, 
+        lng:-63.183248811357664
+    },
     search:
       "Avenida Santos Dumont entre 5to y 6to anillo, Santa Cruz de la Sierra, Bolivia"
   },
@@ -182,6 +254,10 @@ const BRANCHES = [
       "Calle Inca Garcilazo, entre José Aguirre y Av. Emilio Mendizábal N.º 121.",
     phone: "646 9393",
     wa: "59172100880",
+    position: {
+        lat: -19.037697985504135, 
+        lng:-65.24327689760125
+    },
     search:
       "Calle Inca Garcilazo 121 entre José Aguirre y Avenida Emilio Mendizábal, Sucre, Bolivia"
   },
@@ -194,6 +270,10 @@ const BRANCHES = [
       "Zona FAB, calle Rioja N.º 1044, a una cuadra de Av. Juan Pablo II.",
     phone: "286 0363",
     wa: "59172100638",
+    position: {
+        lat: -16.49793589988199, 
+        lng: -68.18904090190335
+    },
     search:
       "Calle Rioja 1044 zona FAB, El Alto, Bolivia"
   },
@@ -206,6 +286,10 @@ const BRANCHES = [
       "Av. Las Banderas esquina 17 de Agosto, zona Villa Fátima.",
     phone: "624 2481",
     wa: "59172406004",
+    position: {
+        lat: -19.571365907523482, 
+        lng: -65.75196090211381
+    },
     search:
       "Avenida Las Banderas esquina 17 de Agosto Villa Fátima, Potosí, Bolivia"
   },
@@ -218,6 +302,10 @@ const BRANCHES = [
       "Av. Panamericana y Héroes del Chaco, zona Morros Blancos.",
     phone: "665 9080 / 718 60016",
     wa: "59171860016",
+    position: {
+        lat: -21.54681047273143, 
+        lng: -64.69881145354543
+    },
     search:
       "Avenida Panamericana y Héroes del Chaco Morros Blancos, Tarija, Bolivia"
   },
@@ -230,6 +318,10 @@ const BRANCHES = [
       "Av. Paurito S/N, zona Plan 3.000, al lado de Hipermaxi.",
     phone: "",
     wa: "59172100319",
+    position: {
+        lat: -17.83450714280161, 
+        lng: -63.1323122800882
+    },
     search:
       "Avenida Paurito Plan 3000 al lado de Hipermaxi, Santa Cruz de la Sierra, Bolivia"
   },
@@ -242,8 +334,28 @@ const BRANCHES = [
       "8vo. anillo, entre Av. Doble Vía La Guardia y Av. Mariscal Santa Cruz.",
     phone: "",
     wa: "59172100318",
+    position: {
+        lat: -17.843536013504632, 
+        lng:-63.23116923311877
+    },
     search:
       "8vo anillo entre Avenida Doble Vía La Guardia y Avenida Mariscal Santa Cruz, Santa Cruz de la Sierra, Bolivia"
+  },
+  {
+    id: "s32",
+    n: "32",
+    name: "Sucursal 32",
+    city: "Santa Cruz",
+    address:
+      "Carretera a Cotoca, Guapilo.",
+    phone: "",
+    wa: "59172100318",
+    position: {
+        lat: -17.783213172839428, 
+        lng: -63.08464015309929
+    },
+    search:
+      "Carretera a Cotoca, Guapilo, Santa Cruz de la Sierra, Bolivia"
   }
 ];
 
@@ -543,40 +655,40 @@ function fillCities() {
 
 async function geocodeBranches() {
   for (const branch of BRANCHES) {
+    if (
+      branch.position &&
+      Number.isFinite(branch.position.lat) &&
+      Number.isFinite(branch.position.lng)
+    ) {
+      branch.geocoded = true;
+      addBranchMarker(branch);
+      renderList();
+      continue;
+    }
     try {
       const { results } =
         await state.Geocoder.geocode({
           address: branch.search,
           region: "BO"
         });
-
       branch.position =
         results[0]
           ?.geometry
           ?.location
           ?.toJSON() || null;
-
       branch.geocoded = true;
-
       if (branch.position) {
         addBranchMarker(branch);
       }
     } catch (error) {
       branch.position = null;
       branch.geocoded = true;
-
       console.warn(
         `No se pudo ubicar ${branch.name}:`,
         error
       );
     }
-
     renderList();
-
-    /*
-      Pausa para no enviar todas las consultas
-      de geocodificación simultáneamente.
-    */
     await wait(150);
   }
 }
