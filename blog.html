@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Sucursales | Monterrey Soluciones en Acero</title>
+    <title>Blog | Monterrey Soluciones en Acero</title>
 
     <link rel="stylesheet" href="css/style.css" />
   </head>
@@ -138,7 +138,7 @@
           </div>
 
           <div class="nav-item">
-            <a href="sucursales.html" class="active">Sucursales</a>
+            <a href="sucursales.html">Sucursales</a>
           </div>
 
           <div class="nav-item has-dropdown">
@@ -192,275 +192,324 @@
 
     <main>
       <!-- =====================================================
-       LOCALIZADOR DE SUCURSALES
+       HERO BLOG
        ===================================================== -->
-      <section class="branches-locator" id="mapa-sucursales">
+      <section class="blog-hero-v2">
+        <div class="container blog-hero-v2-grid">
+          <!-- TEXTO -->
+          <div class="blog-hero-v2-copy reveal">
+            <span class="section-subtitle"> Blog Monterrey </span>
+
+            <h1>
+              Historias, ideas y
+              <span>actualidad.</span>
+            </h1>
+
+            <p>
+              Conoce nuestros proyectos, novedades, recomendaciones y
+              acontecimientos que forman parte del crecimiento de Monterrey.
+            </p>
+
+            <div class="blog-hero-v2-categories">
+              <a href="#noticias"> Noticias </a>
+
+              <a href="#consejos"> Consejos </a>
+
+              <a href="#comunicados"> Comunicados </a>
+
+              <a href="#prensa"> Prensa </a>
+            </div>
+          </div>
+
+          <!-- IMAGEN -->
+          <div class="blog-hero-v2-image reveal delay-1">
+            <img src="img/blog/hero-blog.jpg" alt="Actualidad Monterrey" />
+
+            <div class="blog-hero-v2-overlay">
+              <span> Monterrey </span>
+
+              <strong> Monterrey en FEXPOSIV 2026 </strong>
+            </div>
+
+            <div class="blog-hero-v2-number">2026</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
+       ARTÍCULO DESTACADO
+       ===================================================== -->
+      <section class="blog-featured">
         <div class="container">
-          <!-- ENCABEZADO -->
-          <div class="branches-locator-header reveal">
-            <div>
-              <span class="section-subtitle"> Localizador </span>
+          <div class="blog-featured-card reveal">
+            <div class="blog-featured-image">
+              <img
+                src="img/blog/destacado.jpg"
+                alt="Artículo destacado Monterrey"
+              />
 
-              <h2>Elige tu sucursal</h2>
+              <span class="blog-category-label"> Noticias </span>
             </div>
 
-            <div class="branches-location-status">
-              <span class="branches-status-dot" id="locationStatusDot"></span>
+            <div class="blog-featured-content">
+              <span class="blog-date"> 08 AGO 2026 </span>
 
-              <p id="locationStatus">Tu ubicación todavía no está activada</p>
-            </div>
-          </div>
+              <h2>
+                Monterrey continúa fortaleciendo sus soluciones para grandes
+                proyectos
+              </h2>
 
-          <!-- CONTROLES SUPERIORES -->
-          <div class="branches-controls reveal">
-            <div class="branches-search">
-              <label for="branchSearch"> Buscar sucursal </label>
+              <p>
+                Conoce las novedades, proyectos y acciones que forman parte del
+                crecimiento y evolución de Monterrey Soluciones en Acero.
+              </p>
 
-              <div class="branches-search-box">
-                <span aria-hidden="true">⌕</span>
-
-                <input
-                  type="search"
-                  id="branchSearch"
-                  placeholder="Nombre, zona o dirección"
-                  autocomplete="off"
-                />
-              </div>
-            </div>
-
-            <div class="branches-filter">
-              <label for="branchCity"> Ciudad </label>
-
-              <select id="branchCity">
-                <option value="all">Todas las ciudades</option>
-              </select>
-            </div>
-
-            <div class="branches-travel-mode">
-              <label for="travelMode"> Cómo deseas llegar </label>
-
-              <select id="travelMode">
-                <option value="DRIVING">En vehículo</option>
-
-                <option value="WALKING">A pie</option>
-              </select>
-            </div>
-
-            <button
-              type="button"
-              class="branches-geolocation-button"
-              id="useLocationButton"
-            >
-              <span aria-hidden="true">⌖</span>
-
-              Usar mi ubicación
-            </button>
-          </div>
-
-          <!-- MENSAJE DE ESTADO -->
-          <div
-            class="branches-message"
-            id="branchesMessage"
-            role="status"
-            aria-live="polite"
-            hidden
-          ></div>
-
-          <!-- MAPA Y LISTADO -->
-          <div class="branches-map-layout reveal">
-            <!-- PANEL IZQUIERDO -->
-            <aside class="branches-sidebar">
-              <div class="branches-sidebar-heading">
-                <div>
-                  <span> Sucursales disponibles </span>
-
-                  <strong id="branchesCount"> 0 sucursales </strong>
-                </div>
-
-                <button
-                  type="button"
-                  id="nearestBranchButton"
-                  class="branches-nearest-button"
-                  disabled
-                >
-                  Más cercana
-                </button>
-              </div>
-
-              <!--
-            Las tarjetas se crearán automáticamente
-            desde js/sucursales.js
-          -->
-              <div class="branches-list" id="branchesList" aria-live="polite">
-                <div class="branches-list-placeholder">
-                  <span>⌖</span>
-
-                  <p>Las sucursales se mostrarán aquí.</p>
-                </div>
-              </div>
-            </aside>
-
-            <!-- MAPA -->
-            <div class="branches-map-wrapper">
-              <div
-                id="branchesMap"
-                class="branches-map"
-                aria-label="Mapa interactivo de sucursales Monterrey"
-              ></div>
-
-              <!-- MENSAJE MIENTRAS CARGA -->
-              <div class="branches-map-loading" id="mapLoading">
-                <div class="branches-loader"></div>
-
-                <strong> Preparando el mapa </strong>
-
-                <p>Las ubicaciones aparecerán en unos segundos.</p>
-              </div>
-
-              <!-- BOTÓN PARA CENTRAR -->
-              <button
-                type="button"
-                class="branches-recenter-button"
-                id="recenterMapButton"
-                aria-label="Centrar mapa en las sucursales"
-              >
-                ◎
-              </button>
-
-              <!-- PANEL DE RUTA -->
-              <div class="branches-route-panel" id="routePanel" hidden>
-                <div class="branches-route-header">
-                  <div>
-                    <span> Ruta seleccionada </span>
-
-                    <strong id="routeBranchName"> Sucursal Monterrey </strong>
-                  </div>
-
-                  <button
-                    type="button"
-                    id="clearRouteButton"
-                    aria-label="Cerrar ruta"
-                  >
-                    ×
-                  </button>
-                </div>
-
-                <div class="branches-route-data">
-                  <div>
-                    <span> Distancia </span>
-
-                    <strong id="routeDistance"> — </strong>
-                  </div>
-
-                  <div>
-                    <span> Tiempo aproximado </span>
-
-                    <strong id="routeDuration"> — </strong>
-                  </div>
-                </div>
-
-                <div class="branches-route-actions">
-                  <a
-                    href="#"
-                    id="openGoogleMapsButton"
-                    target="_blank"
-                    rel="noopener"
-                    class="branches-route-primary"
-                  >
-                    Iniciar navegación
-                    <span>→</span>
-                  </a>
-
-                  <button
-                    type="button"
-                    id="changeBranchButton"
-                    class="branches-route-secondary"
-                  >
-                    Elegir otra sucursal
-                  </button>
-                </div>
-              </div>
+              <a href="articulos/fexposiv-2026.html" class="blog-read-more">
+                Leer artículo
+                <span>→</span>
+              </a>
             </div>
           </div>
         </div>
       </section>
 
       <!-- =====================================================
-       INSTRUCCIONES
+       PUBLICACIONES
        ===================================================== -->
-      <section class="branches-steps">
+      <section class="blog-publications" id="noticias">
         <div class="container">
           <div class="section-header reveal">
             <div>
-              <span class="section-subtitle"> ¿Cómo funciona? </span>
+              <span class="section-subtitle"> Publicaciones </span>
 
-              <h2>Encuentra tu ruta en tres pasos</h2>
+              <h2>Últimas novedades</h2>
             </div>
 
             <p>
-              La ubicación solamente se utiliza para calcular el recorrido
-              solicitado dentro del mapa.
+              Información, proyectos, recomendaciones y acontecimientos de
+              Monterrey.
             </p>
           </div>
 
-          <div class="branches-steps-grid">
-            <article class="branches-step-card reveal">
-              <span>01</span>
+          <!-- FILTROS -->
 
-              <h3>Activa tu ubicación</h3>
+          <div class="blog-filters reveal">
+            <button
+              type="button"
+              class="blog-filter active"
+              data-blog-filter="all"
+            >
+              Todas
+            </button>
 
-              <p>
-                Presiona “Usar mi ubicación” y acepta el permiso solicitado por
-                tu navegador.
-              </p>
-            </article>
+            <button
+              type="button"
+              class="blog-filter"
+              data-blog-filter="noticias"
+            >
+              Noticias
+            </button>
 
-            <article class="branches-step-card reveal delay-1">
-              <span>02</span>
+            <button
+              type="button"
+              class="blog-filter"
+              data-blog-filter="consejos"
+            >
+              Consejos
+            </button>
 
-              <h3>Selecciona una sucursal</h3>
+            <button
+              type="button"
+              class="blog-filter"
+              data-blog-filter="comunicados"
+            >
+              Comunicados
+            </button>
 
-              <p>
-                Elige una tarjeta del listado o presiona uno de los marcadores
-                disponibles en el mapa.
-              </p>
-            </article>
-
-            <article class="branches-step-card reveal delay-2">
-              <span>03</span>
-
-              <h3>Consulta tu ruta</h3>
-
-              <p>
-                Visualiza el recorrido, la distancia y el tiempo aproximado para
-                llegar.
-              </p>
-            </article>
+            <button type="button" class="blog-filter" data-blog-filter="prensa">
+              Prensa
+            </button>
           </div>
-        </div>
-      </section>
 
-      <!-- =====================================================
-       CTA
-       ===================================================== -->
-      <section class="about-cta branches-cta">
-        <div class="container">
-          <div class="about-cta-box reveal">
-            <div>
-              <span class="section-subtitle"> Atención Monterrey </span>
+          <!-- GRID -->
 
-              <h2>¿Necesitas comunicarte con una sucursal?</h2>
+          <div class="blog-grid">
+            <!-- ARTÍCULO 01 -->
 
-              <p>
-                Consulta los datos de contacto de cada punto de atención o
-                conversa con nuestro equipo comercial.
-              </p>
-            </div>
+            <article class="blog-card reveal" data-blog-category="noticias">
+              <a href="articulo.html" class="blog-card-image">
+                <img src="img/blog/noticia-01.jpg" alt="Noticia Monterrey" />
 
-            <a href="contacto.html" class="btn-primary">
-              Contactar ahora
-              <span>→</span>
-            </a>
+                <span> Noticias </span>
+              </a>
+
+              <div class="blog-card-content">
+                <small> 08 AGO 2026 </small>
+
+                <h3>Nuevas soluciones para acompañar tus proyectos</h3>
+
+                <p>
+                  Conoce las novedades que tenemos para nuestros clientes y
+                  proyectos.
+                </p>
+
+                <a href="articulo.html">
+                  Leer más
+                  <span>→</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- ARTÍCULO 02 -->
+
+            <article
+              class="blog-card reveal delay-1"
+              data-blog-category="consejos"
+              id="consejos"
+            >
+              <a href="articulo.html" class="blog-card-image">
+                <img src="img/blog/consejo-01.jpg" alt="Consejos Monterrey" />
+
+                <span> Consejos </span>
+              </a>
+
+              <div class="blog-card-content">
+                <small> 05 AGO 2026 </small>
+
+                <h3>¿Cómo elegir el acero adecuado para tu proyecto?</h3>
+
+                <p>
+                  Algunos aspectos importantes que debes considerar antes de
+                  elegir tus materiales.
+                </p>
+
+                <a href="articulo.html">
+                  Leer más
+                  <span>→</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- ARTÍCULO 03 -->
+
+            <article
+              class="blog-card reveal delay-2"
+              data-blog-category="comunicados"
+              id="comunicados"
+            >
+              <a href="articulo.html" class="blog-card-image">
+                <img
+                  src="img/blog/comunicado-01.jpg"
+                  alt="Comunicado Monterrey"
+                />
+
+                <span> Comunicados </span>
+              </a>
+
+              <div class="blog-card-content">
+                <small> 04 AGO 2026 </small>
+
+                <h3>Información importante para nuestros clientes</h3>
+
+                <p>
+                  Revisa nuestros últimos comunicados e información
+                  institucional.
+                </p>
+
+                <a href="articulo.html">
+                  Leer más
+                  <span>→</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- ARTÍCULO 04 -->
+
+            <article
+              class="blog-card reveal"
+              data-blog-category="prensa"
+              id="prensa"
+            >
+              <a href="articulo.html" class="blog-card-image">
+                <img src="img/blog/prensa-01.jpg" alt="Monterrey en prensa" />
+
+                <span> Prensa </span>
+              </a>
+
+              <div class="blog-card-content">
+                <small> 01 AGO 2026 </small>
+
+                <h3>Monterrey presente en importantes eventos del sector</h3>
+
+                <p>
+                  Conoce nuestra participación y presencia en actividades
+                  empresariales.
+                </p>
+
+                <a href="articulo.html">
+                  Leer más
+                  <span>→</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- ARTÍCULO 05 -->
+
+            <article
+              class="blog-card reveal delay-1"
+              data-blog-category="noticias"
+            >
+              <a href="articulo.html" class="blog-card-image">
+                <img src="img/blog/noticia-02.jpg" alt="Noticias Monterrey" />
+
+                <span> Noticias </span>
+              </a>
+
+              <div class="blog-card-content">
+                <small> 29 JUL 2026 </small>
+
+                <h3>Seguimos creciendo junto a nuestros clientes</h3>
+
+                <p>
+                  Más cobertura, soluciones y atención para acompañar tus
+                  proyectos.
+                </p>
+
+                <a href="articulo.html">
+                  Leer más
+                  <span>→</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- ARTÍCULO 06 -->
+
+            <article
+              class="blog-card reveal delay-2"
+              data-blog-category="consejos"
+            >
+              <a href="articulo.html" class="blog-card-image">
+                <img src="img/blog/consejo-02.jpg" alt="Consejos sobre acero" />
+
+                <span> Consejos </span>
+              </a>
+
+              <div class="blog-card-content">
+                <small> 25 JUL 2026 </small>
+
+                <h3>Recomendaciones para almacenar correctamente el acero</h3>
+
+                <p>
+                  Protege tus materiales y conserva sus condiciones durante el
+                  proyecto.
+                </p>
+
+                <a href="articulo.html">
+                  Leer más
+                  <span>→</span>
+                </a>
+              </div>
+            </article>
           </div>
         </div>
       </section>
@@ -666,5 +715,31 @@
       async
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeauorCQojeUVUqNISwbpODZQgbzvO6fo&loading=async&callback=initBranchesMap&v=weekly&language=es&region=BO"
     ></script>
+    <script>
+      const blogFilters = document.querySelectorAll(".blog-filter");
+      const blogCards = document.querySelectorAll(".blog-card");
+
+      blogFilters.forEach((button) => {
+        button.addEventListener("click", () => {
+          blogFilters.forEach((item) => {
+            item.classList.remove("active");
+          });
+
+          button.classList.add("active");
+
+          const filter = button.dataset.blogFilter;
+
+          blogCards.forEach((card) => {
+            const category = card.dataset.blogCategory;
+
+            if (filter === "all" || category === filter) {
+              card.classList.remove("is-hidden");
+            } else {
+              card.classList.add("is-hidden");
+            }
+          });
+        });
+      });
+    </script>
   </body>
 </html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Sucursales | Monterrey Soluciones en Acero</title>
+    <title>Servicios | Monterrey Soluciones en Acero</title>
 
     <link rel="stylesheet" href="css/style.css" />
   </head>
@@ -138,7 +138,7 @@
           </div>
 
           <div class="nav-item">
-            <a href="sucursales.html" class="active">Sucursales</a>
+            <a href="sucursales.html">Sucursales</a>
           </div>
 
           <div class="nav-item has-dropdown">
@@ -192,248 +192,286 @@
 
     <main>
       <!-- =====================================================
-       LOCALIZADOR DE SUCURSALES
+       HERO SERVICIOS
        ===================================================== -->
-      <section class="branches-locator" id="mapa-sucursales">
-        <div class="container">
-          <!-- ENCABEZADO -->
-          <div class="branches-locator-header reveal">
-            <div>
-              <span class="section-subtitle"> Localizador </span>
+      <section class="services-hero">
+        <div class="container services-hero-content">
+          <div class="services-hero-copy reveal">
+            <span class="section-subtitle"> Servicios Monterrey </span>
 
-              <h2>Elige tu sucursal</h2>
-            </div>
+            <h1>
+              Soluciones que agilizan
+              <span>tu obra.</span>
+            </h1>
 
-            <div class="branches-location-status">
-              <span class="branches-status-dot" id="locationStatusDot"></span>
+            <p>
+              Transformamos y preparamos el acero para que llegue a tu proyecto
+              listo para trabajar, con precisión, eficiencia y respaldo.
+            </p>
 
-              <p id="locationStatus">Tu ubicación todavía no está activada</p>
-            </div>
+            <a href="#servicios" class="btn-primary">
+              Conoce nuestros servicios
+              <span>→</span>
+            </a>
           </div>
 
-          <!-- CONTROLES SUPERIORES -->
-          <div class="branches-controls reveal">
-            <div class="branches-search">
-              <label for="branchSearch"> Buscar sucursal </label>
+          <div class="services-hero-visual reveal delay-1">
+            <img
+              src="img/servicios/hero-servicios.jpg"
+              alt="Servicios especializados Monterrey"
+            />
 
-              <div class="branches-search-box">
-                <span aria-hidden="true">⌕</span>
+            <div class="services-hero-badge">
+              <strong>Acero listo</strong>
 
-                <input
-                  type="search"
-                  id="branchSearch"
-                  placeholder="Nombre, zona o dirección"
-                  autocomplete="off"
-                />
-              </div>
-            </div>
-
-            <div class="branches-filter">
-              <label for="branchCity"> Ciudad </label>
-
-              <select id="branchCity">
-                <option value="all">Todas las ciudades</option>
-              </select>
-            </div>
-
-            <div class="branches-travel-mode">
-              <label for="travelMode"> Cómo deseas llegar </label>
-
-              <select id="travelMode">
-                <option value="DRIVING">En vehículo</option>
-
-                <option value="WALKING">A pie</option>
-              </select>
-            </div>
-
-            <button
-              type="button"
-              class="branches-geolocation-button"
-              id="useLocationButton"
-            >
-              <span aria-hidden="true">⌖</span>
-
-              Usar mi ubicación
-            </button>
-          </div>
-
-          <!-- MENSAJE DE ESTADO -->
-          <div
-            class="branches-message"
-            id="branchesMessage"
-            role="status"
-            aria-live="polite"
-            hidden
-          ></div>
-
-          <!-- MAPA Y LISTADO -->
-          <div class="branches-map-layout reveal">
-            <!-- PANEL IZQUIERDO -->
-            <aside class="branches-sidebar">
-              <div class="branches-sidebar-heading">
-                <div>
-                  <span> Sucursales disponibles </span>
-
-                  <strong id="branchesCount"> 0 sucursales </strong>
-                </div>
-
-                <button
-                  type="button"
-                  id="nearestBranchButton"
-                  class="branches-nearest-button"
-                  disabled
-                >
-                  Más cercana
-                </button>
-              </div>
-
-              <!--
-            Las tarjetas se crearán automáticamente
-            desde js/sucursales.js
-          -->
-              <div class="branches-list" id="branchesList" aria-live="polite">
-                <div class="branches-list-placeholder">
-                  <span>⌖</span>
-
-                  <p>Las sucursales se mostrarán aquí.</p>
-                </div>
-              </div>
-            </aside>
-
-            <!-- MAPA -->
-            <div class="branches-map-wrapper">
-              <div
-                id="branchesMap"
-                class="branches-map"
-                aria-label="Mapa interactivo de sucursales Monterrey"
-              ></div>
-
-              <!-- MENSAJE MIENTRAS CARGA -->
-              <div class="branches-map-loading" id="mapLoading">
-                <div class="branches-loader"></div>
-
-                <strong> Preparando el mapa </strong>
-
-                <p>Las ubicaciones aparecerán en unos segundos.</p>
-              </div>
-
-              <!-- BOTÓN PARA CENTRAR -->
-              <button
-                type="button"
-                class="branches-recenter-button"
-                id="recenterMapButton"
-                aria-label="Centrar mapa en las sucursales"
-              >
-                ◎
-              </button>
-
-              <!-- PANEL DE RUTA -->
-              <div class="branches-route-panel" id="routePanel" hidden>
-                <div class="branches-route-header">
-                  <div>
-                    <span> Ruta seleccionada </span>
-
-                    <strong id="routeBranchName"> Sucursal Monterrey </strong>
-                  </div>
-
-                  <button
-                    type="button"
-                    id="clearRouteButton"
-                    aria-label="Cerrar ruta"
-                  >
-                    ×
-                  </button>
-                </div>
-
-                <div class="branches-route-data">
-                  <div>
-                    <span> Distancia </span>
-
-                    <strong id="routeDistance"> — </strong>
-                  </div>
-
-                  <div>
-                    <span> Tiempo aproximado </span>
-
-                    <strong id="routeDuration"> — </strong>
-                  </div>
-                </div>
-
-                <div class="branches-route-actions">
-                  <a
-                    href="#"
-                    id="openGoogleMapsButton"
-                    target="_blank"
-                    rel="noopener"
-                    class="branches-route-primary"
-                  >
-                    Iniciar navegación
-                    <span>→</span>
-                  </a>
-
-                  <button
-                    type="button"
-                    id="changeBranchButton"
-                    class="branches-route-secondary"
-                  >
-                    Elegir otra sucursal
-                  </button>
-                </div>
-              </div>
+              <span>para tu proyecto</span>
             </div>
           </div>
         </div>
       </section>
 
       <!-- =====================================================
-       INSTRUCCIONES
+       INTRODUCCIÓN
        ===================================================== -->
-      <section class="branches-steps">
+      <section class="services-intro">
+        <div class="container services-intro-grid">
+          <div class="reveal">
+            <span class="section-subtitle"> Más que acero </span>
+
+            <h2>Procesos pensados para optimizar tu proyecto</h2>
+          </div>
+
+          <div class="services-intro-copy reveal delay-1">
+            <p>
+              Nuestros servicios complementan el suministro de acero con
+              procesos que permiten reducir tiempos de trabajo, mejorar la
+              precisión y facilitar la ejecución en obra.
+            </p>
+
+            <div class="services-intro-line"></div>
+
+            <strong> Precisión · Productividad · Respaldo </strong>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
+       SERVICIOS
+       ===================================================== -->
+      <section class="services-showcase" id="servicios">
+        <div class="container">
+          <!-- SERVICIO 01 -->
+          <article class="service-feature reveal" id="corte-doblado">
+            <div class="service-feature-image">
+              <span class="service-feature-number"> 01 </span>
+
+              <img
+                src="img/servicios/corte-doblado.jpg"
+                alt="Servicio de corte y doblado"
+              />
+            </div>
+
+            <div class="service-feature-content">
+              <span class="service-feature-kicker"> Preparación de acero </span>
+
+              <h2>Corte y doblado</h2>
+
+              <p>
+                Procesamos barras de acero de acuerdo con las especificaciones
+                del proyecto, facilitando el armado y reduciendo trabajos
+                adicionales en obra.
+              </p>
+
+              <ul class="service-benefits">
+                <li>Mayor precisión en cada pieza</li>
+
+                <li>Optimización de tiempos</li>
+
+                <li>Menor desperdicio de material</li>
+              </ul>
+
+              <a href="contacto.html" class="service-link">
+                Solicitar información
+
+                <span>→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- SERVICIO 02 -->
+          <article
+            class="service-feature service-feature-reverse reveal"
+            id="corte-limpio"
+          >
+            <div class="service-feature-image">
+              <span class="service-feature-number"> 02 </span>
+
+              <img
+                src="img/servicios/corte-limpio.jpg"
+                alt="Servicio de corte limpio"
+              />
+            </div>
+
+            <div class="service-feature-content">
+              <span class="service-feature-kicker">
+                Precisión y eficiencia
+              </span>
+
+              <h2>Corte limpio</h2>
+
+              <p>
+                Realizamos cortes precisos para obtener piezas listas para
+                continuar con los procesos de fabricación, montaje o
+                construcción.
+              </p>
+
+              <ul class="service-benefits">
+                <li>Acabados más uniformes</li>
+
+                <li>Reducción de retrabajos</li>
+
+                <li>Mejor aprovechamiento del acero</li>
+              </ul>
+
+              <a href="contacto.html" class="service-link">
+                Solicitar información
+
+                <span>→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- SERVICIO 03 -->
+          <article class="service-feature reveal" id="canastillos">
+            <div class="service-feature-image">
+              <span class="service-feature-number"> 03 </span>
+
+              <img
+                src="img/servicios/canastillos-pilotes.jpg"
+                alt="Armado de canastillos para pilotes"
+              />
+            </div>
+
+            <div class="service-feature-content">
+              <span class="service-feature-kicker"> Soluciones para obra </span>
+
+              <h2>Armado de canastillos para pilotes</h2>
+
+              <p>
+                Preparamos estructuras de acero para pilotes de acuerdo con los
+                requerimientos del proyecto, facilitando su traslado e
+                instalación.
+              </p>
+
+              <ul class="service-benefits">
+                <li>Armado previo especializado</li>
+
+                <li>Mayor control del proceso</li>
+
+                <li>Reducción de tiempos en obra</li>
+              </ul>
+
+              <a href="contacto.html" class="service-link">
+                Solicitar información
+
+                <span>→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- SERVICIO 04 -->
+          <article
+            class="service-feature service-feature-reverse reveal"
+            id="cabezales"
+          >
+            <div class="service-feature-image">
+              <span class="service-feature-number"> 04 </span>
+
+              <img
+                src="img/servicios/armado-cabezales.jpg"
+                alt="Servicio de armado para cabezales"
+              />
+            </div>
+
+            <div class="service-feature-content">
+              <span class="service-feature-kicker">
+                Estructuras preparadas
+              </span>
+
+              <h2>Armado para cabezales</h2>
+
+              <p>
+                Desarrollamos el armado de acero para cabezales según los
+                requerimientos estructurales del proyecto.
+              </p>
+
+              <ul class="service-benefits">
+                <li>Mayor orden y precisión</li>
+
+                <li>Preparación previa al montaje</li>
+
+                <li>Optimización del trabajo en obra</li>
+              </ul>
+
+              <a href="contacto.html" class="service-link">
+                Solicitar información
+
+                <span>→</span>
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- =====================================================
+       PROCESO
+       ===================================================== -->
+      <section class="services-process">
         <div class="container">
           <div class="section-header reveal">
             <div>
-              <span class="section-subtitle"> ¿Cómo funciona? </span>
+              <span class="section-subtitle"> Nuestro proceso </span>
 
-              <h2>Encuentra tu ruta en tres pasos</h2>
+              <h2>De tu requerimiento a una solución lista para obra</h2>
             </div>
 
             <p>
-              La ubicación solamente se utiliza para calcular el recorrido
-              solicitado dentro del mapa.
+              Coordinamos cada servicio de acuerdo con las necesidades y
+              especificaciones de tu proyecto.
             </p>
           </div>
 
-          <div class="branches-steps-grid">
-            <article class="branches-step-card reveal">
+          <div class="services-process-grid">
+            <article class="services-process-card reveal">
               <span>01</span>
 
-              <h3>Activa tu ubicación</h3>
+              <h3>Recibimos tu requerimiento</h3>
 
               <p>
-                Presiona “Usar mi ubicación” y acepta el permiso solicitado por
-                tu navegador.
+                Revisamos las necesidades, medidas y características del
+                proyecto.
               </p>
             </article>
 
-            <article class="branches-step-card reveal delay-1">
+            <article class="services-process-card reveal delay-1">
               <span>02</span>
 
-              <h3>Selecciona una sucursal</h3>
+              <h3>Preparamos el acero</h3>
 
               <p>
-                Elige una tarjeta del listado o presiona uno de los marcadores
-                disponibles en el mapa.
+                Ejecutamos el servicio solicitado utilizando procesos
+                especializados.
               </p>
             </article>
 
-            <article class="branches-step-card reveal delay-2">
+            <article class="services-process-card reveal delay-2">
               <span>03</span>
 
-              <h3>Consulta tu ruta</h3>
+              <h3>Coordinamos la entrega</h3>
 
               <p>
-                Visualiza el recorrido, la distancia y el tiempo aproximado para
-                llegar.
+                El material queda preparado para continuar con la ejecución de
+                tu proyecto.
               </p>
             </article>
           </div>
@@ -443,22 +481,23 @@
       <!-- =====================================================
        CTA
        ===================================================== -->
-      <section class="about-cta branches-cta">
+      <section class="services-cta">
         <div class="container">
-          <div class="about-cta-box reveal">
+          <div class="services-cta-box reveal">
             <div>
-              <span class="section-subtitle"> Atención Monterrey </span>
+              <span class="section-subtitle"> Tu proyecto empieza aquí </span>
 
-              <h2>¿Necesitas comunicarte con una sucursal?</h2>
+              <h2>¿Necesitas un servicio especializado?</h2>
 
               <p>
-                Consulta los datos de contacto de cada punto de atención o
-                conversa con nuestro equipo comercial.
+                Cuéntanos qué necesitas y nuestro equipo te ayudará a encontrar
+                una solución para tu proyecto.
               </p>
             </div>
 
             <a href="contacto.html" class="btn-primary">
-              Contactar ahora
+              Solicitar cotización
+
               <span>→</span>
             </a>
           </div>

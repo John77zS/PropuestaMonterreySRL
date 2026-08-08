@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Sucursales | Monterrey Soluciones en Acero</title>
+    <title>Contacto | Monterrey Soluciones en Acero</title>
 
     <link rel="stylesheet" href="css/style.css" />
   </head>
@@ -138,7 +138,7 @@
           </div>
 
           <div class="nav-item">
-            <a href="sucursales.html" class="active">Sucursales</a>
+            <a href="sucursales.html">Sucursales</a>
           </div>
 
           <div class="nav-item has-dropdown">
@@ -192,273 +192,240 @@
 
     <main>
       <!-- =====================================================
-       LOCALIZADOR DE SUCURSALES
+       HERO CONTACTO
        ===================================================== -->
-      <section class="branches-locator" id="mapa-sucursales">
-        <div class="container">
-          <!-- ENCABEZADO -->
-          <div class="branches-locator-header reveal">
-            <div>
-              <span class="section-subtitle"> Localizador </span>
+      <section class="contact-page-hero">
+        <div class="container contact-page-hero-grid">
+          <div class="contact-page-hero-copy reveal">
+            <span class="section-subtitle"> Contacto </span>
 
-              <h2>Elige tu sucursal</h2>
-            </div>
-
-            <div class="branches-location-status">
-              <span class="branches-status-dot" id="locationStatusDot"></span>
-
-              <p id="locationStatus">Tu ubicación todavía no está activada</p>
-            </div>
-          </div>
-
-          <!-- CONTROLES SUPERIORES -->
-          <div class="branches-controls reveal">
-            <div class="branches-search">
-              <label for="branchSearch"> Buscar sucursal </label>
-
-              <div class="branches-search-box">
-                <span aria-hidden="true">⌕</span>
-
-                <input
-                  type="search"
-                  id="branchSearch"
-                  placeholder="Nombre, zona o dirección"
-                  autocomplete="off"
-                />
-              </div>
-            </div>
-
-            <div class="branches-filter">
-              <label for="branchCity"> Ciudad </label>
-
-              <select id="branchCity">
-                <option value="all">Todas las ciudades</option>
-              </select>
-            </div>
-
-            <div class="branches-travel-mode">
-              <label for="travelMode"> Cómo deseas llegar </label>
-
-              <select id="travelMode">
-                <option value="DRIVING">En vehículo</option>
-
-                <option value="WALKING">A pie</option>
-              </select>
-            </div>
-
-            <button
-              type="button"
-              class="branches-geolocation-button"
-              id="useLocationButton"
-            >
-              <span aria-hidden="true">⌖</span>
-
-              Usar mi ubicación
-            </button>
-          </div>
-
-          <!-- MENSAJE DE ESTADO -->
-          <div
-            class="branches-message"
-            id="branchesMessage"
-            role="status"
-            aria-live="polite"
-            hidden
-          ></div>
-
-          <!-- MAPA Y LISTADO -->
-          <div class="branches-map-layout reveal">
-            <!-- PANEL IZQUIERDO -->
-            <aside class="branches-sidebar">
-              <div class="branches-sidebar-heading">
-                <div>
-                  <span> Sucursales disponibles </span>
-
-                  <strong id="branchesCount"> 0 sucursales </strong>
-                </div>
-
-                <button
-                  type="button"
-                  id="nearestBranchButton"
-                  class="branches-nearest-button"
-                  disabled
-                >
-                  Más cercana
-                </button>
-              </div>
-
-              <!--
-            Las tarjetas se crearán automáticamente
-            desde js/sucursales.js
-          -->
-              <div class="branches-list" id="branchesList" aria-live="polite">
-                <div class="branches-list-placeholder">
-                  <span>⌖</span>
-
-                  <p>Las sucursales se mostrarán aquí.</p>
-                </div>
-              </div>
-            </aside>
-
-            <!-- MAPA -->
-            <div class="branches-map-wrapper">
-              <div
-                id="branchesMap"
-                class="branches-map"
-                aria-label="Mapa interactivo de sucursales Monterrey"
-              ></div>
-
-              <!-- MENSAJE MIENTRAS CARGA -->
-              <div class="branches-map-loading" id="mapLoading">
-                <div class="branches-loader"></div>
-
-                <strong> Preparando el mapa </strong>
-
-                <p>Las ubicaciones aparecerán en unos segundos.</p>
-              </div>
-
-              <!-- BOTÓN PARA CENTRAR -->
-              <button
-                type="button"
-                class="branches-recenter-button"
-                id="recenterMapButton"
-                aria-label="Centrar mapa en las sucursales"
-              >
-                ◎
-              </button>
-
-              <!-- PANEL DE RUTA -->
-              <div class="branches-route-panel" id="routePanel" hidden>
-                <div class="branches-route-header">
-                  <div>
-                    <span> Ruta seleccionada </span>
-
-                    <strong id="routeBranchName"> Sucursal Monterrey </strong>
-                  </div>
-
-                  <button
-                    type="button"
-                    id="clearRouteButton"
-                    aria-label="Cerrar ruta"
-                  >
-                    ×
-                  </button>
-                </div>
-
-                <div class="branches-route-data">
-                  <div>
-                    <span> Distancia </span>
-
-                    <strong id="routeDistance"> — </strong>
-                  </div>
-
-                  <div>
-                    <span> Tiempo aproximado </span>
-
-                    <strong id="routeDuration"> — </strong>
-                  </div>
-                </div>
-
-                <div class="branches-route-actions">
-                  <a
-                    href="#"
-                    id="openGoogleMapsButton"
-                    target="_blank"
-                    rel="noopener"
-                    class="branches-route-primary"
-                  >
-                    Iniciar navegación
-                    <span>→</span>
-                  </a>
-
-                  <button
-                    type="button"
-                    id="changeBranchButton"
-                    class="branches-route-secondary"
-                  >
-                    Elegir otra sucursal
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- =====================================================
-       INSTRUCCIONES
-       ===================================================== -->
-      <section class="branches-steps">
-        <div class="container">
-          <div class="section-header reveal">
-            <div>
-              <span class="section-subtitle"> ¿Cómo funciona? </span>
-
-              <h2>Encuentra tu ruta en tres pasos</h2>
-            </div>
+            <h1>
+              Hablemos de tu
+              <span>próximo proyecto.</span>
+            </h1>
 
             <p>
-              La ubicación solamente se utiliza para calcular el recorrido
-              solicitado dentro del mapa.
+              Nuestro equipo está listo para orientarte y ayudarte a encontrar
+              la solución adecuada para tu proyecto.
             </p>
+
+            <div class="contact-page-hero-actions">
+              <a
+                href="https://wa.me/59171300033"
+                target="_blank"
+                class="btn-primary"
+              >
+                Hablar por WhatsApp
+                <span>→</span>
+              </a>
+
+              <a href="sucursales.html" class="contact-outline-button">
+                Ver sucursales
+              </a>
+            </div>
           </div>
 
-          <div class="branches-steps-grid">
-            <article class="branches-step-card reveal">
-              <span>01</span>
+          <div class="contact-page-hero-panel reveal delay-1">
+            <span>Atención Monterrey</span>
 
-              <h3>Activa tu ubicación</h3>
+            <h2>Estamos cerca de ti</h2>
 
-              <p>
-                Presiona “Usar mi ubicación” y acepta el permiso solicitado por
-                tu navegador.
-              </p>
-            </article>
+            <p>
+              Comunícate con nuestro equipo comercial o encuentra la sucursal
+              Monterrey más cercana.
+            </p>
 
-            <article class="branches-step-card reveal delay-1">
-              <span>02</span>
+            <div class="contact-page-mini-data">
+              <div>
+                <small>Correo</small>
+                <strong>correo@monterreysrl.com.bo</strong>
+              </div>
 
-              <h3>Selecciona una sucursal</h3>
-
-              <p>
-                Elige una tarjeta del listado o presiona uno de los marcadores
-                disponibles en el mapa.
-              </p>
-            </article>
-
-            <article class="branches-step-card reveal delay-2">
-              <span>03</span>
-
-              <h3>Consulta tu ruta</h3>
-
-              <p>
-                Visualiza el recorrido, la distancia y el tiempo aproximado para
-                llegar.
-              </p>
-            </article>
+              <div>
+                <small>Atención</small>
+                <strong>En nuestras sucursales</strong>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       <!-- =====================================================
-       CTA
+       FORMULARIO
        ===================================================== -->
-      <section class="about-cta branches-cta">
-        <div class="container">
-          <div class="about-cta-box reveal">
-            <div>
-              <span class="section-subtitle"> Atención Monterrey </span>
+      <section class="contact-page-main" id="formulario">
+        <div class="container contact-page-grid">
+          <div class="contact-form-column reveal">
+            <span class="section-subtitle"> Escríbenos </span>
 
-              <h2>¿Necesitas comunicarte con una sucursal?</h2>
+            <h2>Cuéntanos qué necesitas</h2>
+
+            <p class="contact-form-intro">
+              Completa tus datos y un asesor podrá ponerse en contacto contigo.
+            </p>
+
+            <form class="contact-main-form">
+              <div class="contact-form-row">
+                <div class="contact-field">
+                  <label for="contactName"> Nombre </label>
+
+                  <input
+                    id="contactName"
+                    type="text"
+                    placeholder="Tu nombre"
+                    required
+                  />
+                </div>
+
+                <div class="contact-field">
+                  <label for="contactCompany"> Empresa </label>
+
+                  <input
+                    id="contactCompany"
+                    type="text"
+                    placeholder="Nombre de la empresa"
+                  />
+                </div>
+              </div>
+
+              <div class="contact-form-row">
+                <div class="contact-field">
+                  <label for="contactPhone"> Teléfono </label>
+
+                  <input
+                    id="contactPhone"
+                    type="tel"
+                    placeholder="+591"
+                    required
+                  />
+                </div>
+
+                <div class="contact-field">
+                  <label for="contactEmail"> Correo </label>
+
+                  <input
+                    id="contactEmail"
+                    type="email"
+                    placeholder="correo@empresa.com"
+                  />
+                </div>
+              </div>
+
+              <div class="contact-field">
+                <label for="contactSubject"> ¿En qué podemos ayudarte? </label>
+
+                <select id="contactSubject">
+                  <option>Solicitud de cotización</option>
+
+                  <option>Consulta de productos</option>
+
+                  <option>Consulta de servicios</option>
+
+                  <option>Información de sucursales</option>
+
+                  <option>Otro</option>
+                </select>
+              </div>
+
+              <div class="contact-field">
+                <label for="contactMessage"> Mensaje </label>
+
+                <textarea
+                  id="contactMessage"
+                  rows="6"
+                  placeholder="Cuéntanos brevemente qué necesitas..."
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn-primary contact-submit">
+                Enviar consulta
+                <span>→</span>
+              </button>
+            </form>
+          </div>
+
+          <!-- DATOS DE CONTACTO -->
+
+          <aside class="contact-info-column">
+            <article
+              class="contact-info-card contact-info-card-dark reveal"
+              id="whatsapp"
+            >
+              <span class="contact-info-number"> 01 </span>
+
+              <small> Atención inmediata </small>
+
+              <h3>WhatsApp</h3>
 
               <p>
-                Consulta los datos de contacto de cada punto de atención o
-                conversa con nuestro equipo comercial.
+                Habla directamente con nuestro equipo para consultas comerciales
+                y cotizaciones.
+              </p>
+
+              <a href="https://wa.me/59171300033" target="_blank">
+                Escribir ahora
+                <span>→</span>
+              </a>
+            </article>
+
+            <article class="contact-info-card reveal delay-1" id="correo">
+              <span class="contact-info-number"> 02 </span>
+
+              <small> Correo electrónico </small>
+
+              <h3>Escríbenos</h3>
+
+              <p>
+                Puedes enviarnos información detallada, requerimientos o
+                documentación.
+              </p>
+
+              <a href="mailto:ventas@monterrey.com.bo">
+                correo@monterreysrl.com.bo
+                <span>→</span>
+              </a>
+            </article>
+
+            <article class="contact-info-card reveal delay-2">
+              <span class="contact-info-number"> 03 </span>
+
+              <small> Atención presencial </small>
+
+              <h3>Encuentra tu sucursal</h3>
+
+              <p>
+                Consulta nuestros puntos de atención y calcula la ruta desde tu
+                ubicación.
+              </p>
+
+              <a href="sucursales.html">
+                Buscar sucursal
+                <span>→</span>
+              </a>
+            </article>
+          </aside>
+        </div>
+      </section>
+
+      <!-- =====================================================
+       SUCURSALES CTA
+       ===================================================== -->
+      <section class="contact-branches-cta">
+        <div class="container">
+          <div class="contact-branches-box reveal">
+            <div>
+              <span class="section-subtitle"> Red Monterrey </span>
+
+              <h2>Encuentra la sucursal más cercana</h2>
+
+              <p>
+                Utiliza nuestro mapa interactivo para encontrar una sucursal y
+                calcular cómo llegar desde tu ubicación.
               </p>
             </div>
 
-            <a href="contacto.html" class="btn-primary">
-              Contactar ahora
+            <a href="sucursales.html" class="btn-primary">
+              Abrir mapa
               <span>→</span>
             </a>
           </div>
